@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(172, 127, 254);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: 450px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  color: black;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.main-heading {
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.buttons .func-btn {
+  width: 150px;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+/* Action buttons */
+.func-btn {
+  background-color: rgb(244, 110, 53);
+  color: white;
+  text-align: center;
+}
+
+/* Options buttons */
+#options button {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  margin: 10px 0;
+  font-size: 17px;
+  text-align: left;
+}
+
+/* Answer states */
+.correct {
+  background: #22c55e;
+  color: white;
+}
+
+.wrong {
+  background: #ef4444;
+  color: white;
+}
+
+/* =========================
+   TOP SECTION (TIMER + INFO)
+========================= */
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================
+   TIMER (CIRCULAR)
+========================= */
+
+.timer-circle {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+.timer-circle svg {
+  width: 70px;
+  height: 70px;
+  transform: rotate(-90deg);
+}
+
+.timer-circle circle {
+  fill: none;
+  stroke-width: 6;
+}
+
+.timer-circle .bg {
+  stroke: #334155;
+}
+
+.timer-circle .progress {
+  stroke: #22c55e;
+  stroke-dasharray: 176;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+#timeText {
+  position: absolute;
+  top: 60%;
+  left: 42%;
+  transform: translate(-42%, -60%);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+/* =========================
+   QUESTION BOX
+========================= */
+
+.question-container {
+  width: 100%;
+  background-color: rgb(147, 129, 252);
+  color: white;
+  padding: 20px 15px;
+  border-radius: 10px;
+  margin: 20px 0 10px;
+}
+
+#question {
+  font-size: 18px;
+  text-align: left;
+}
+
+/* =========================
+   RESULT BOX
+========================= */
+
+#resultBox h2 {
+  margin-bottom: 20px;
+}
+
+#resultBox div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+#resultBox p {
+  background-color: rgb(17, 214, 17);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Special result states */
+#resultBox .wrong {
+  background-color: red;
+}
+
+#resultBox .skip {
+  background-color: #ef4444;
+}
+
+#resultBox .score {
+  background-color: black;
+  color: white;
+}
+
+/* Restart button */
+#resultBox button {
+  background-color: rgb(244, 110, 53);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE FIX ONLY
+   (NO DESIGN CHANGES)
+========================= */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 450px; /* keep same design limit */
+    padding: 15px;
+  }
+
+  .buttons {
+    flex-direction: column; /* only stacking, no visual change */
+  }
+
+  .buttons .func-btn {
+    width: 100%; /* full width on mobile */
+  }
+
+  #options button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .top {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .timer-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .timer-circle svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  #timeText {
+    font-size: 20px;
+  }
+
+  #question {
+    font-size: 16px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+
+  .container {
+    padding: 12px;
+  }
+
+  #question {
+    font-size: 15px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}

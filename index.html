@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Networking 01 (52 MCQs)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- START SCREEN -->
+  <div id="startScreen">
+    <h1 class="main-heading">Networking MCQs</h1>
+    <button class="func-btn" id="startBtn">Start Paper</button>
+    <button class="func-btn" id="resumeBtn" class="hidden">Resume Paper</button>
+  </div>
+
+  <!-- QUIZ BOX -->
+  <div id="quizBox" class="hidden">
+
+    <div class="top">
+      <span id="progressText"></span>
+
+      <!-- CIRCULAR TIMER -->
+      <div class="timer-circle">
+        <svg>
+          <circle class="bg" cx="30" cy="30" r="28"></circle>
+          <circle class="progress" cx="30" cy="30" r="28"></circle>
+        </svg>
+        <span id="timeText">20</span>
+      </div>
+    </div>
+
+    <div class="question-container"><h2 id="question"></h2></div>
+    <div id="options"></div>
+
+    <div class="buttons">
+      <button class="func-btn" id="nextBtn">Next</button>
+      <button class="func-btn" id="prevBtn">Previous</button>
+      <button class="func-btn" id="skipBtn">Skip</button>
+      <button class="func-btn" id="resetBtn">Reset</button>
+    </div>
+
+  </div>
+
+  <!-- RESULT -->
+  <div id="resultBox" class="hidden"></div>
+
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
